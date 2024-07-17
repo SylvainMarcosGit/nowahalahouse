@@ -2,15 +2,11 @@ import React from "react";
 import contactImage from "../assets/images/about/contact1.jpg";
 import logo from "../assets/images/about/logo.jpg";
 import HeaderContact from "./HeaderContact";
-
 import Footer from "./Footer";
 
 const Contact = () => {
   return (
     <div>
-      
-      
-      
       <HeaderContact />
       <div className="container mx-auto flex flex-wrap py-6">
         {/* Image de contact */}
