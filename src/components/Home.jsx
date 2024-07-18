@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import Diasporama from "./Diasporama";
 import { Link } from "react-router-dom";
 import ContactSection from "./ContactSection";
 import TestimonialsSection from "./TestimonialsSection";
 import ServicesSection from "./ServicesSection";
 import Header from "./Header";
-
 import Footer from "./Footer";
 
 const Home = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-       <Header />
+      <Header />
       <Diasporama />
       <div className="text-center">
         <h2 className="text-4xl font-bold mb-4">
@@ -20,19 +19,18 @@ const Home = () => {
         <p className="text-lg text-gray-700">
           Nous sommes ravis de vous accueillir.
         </p>
-        <a
-          href="#services"
+        <Link
+          to="#services"
           className="mt-4 m-6 inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg transition duration-300"
         >
           Découvrez nos services
-        </a>
+        </Link>
       </div>
       {/* Services Section */}
       <ServicesSection />
 
       {/* About Section */}
-
-      <section id="about" className="w-full  bg-gray-100">
+      <section id="about" className="w-full bg-gray-100">
         <div className="container mx-auto text-center">
           <h2 className="mt-8 text-3xl font-bold mb-8">Qui sommes-nous ?</h2>
           <p className="text-gray-700">
@@ -58,9 +56,7 @@ const Home = () => {
       <TestimonialsSection />
 
       {/* Contact Section */}
-      
-        <ContactSection />
-      
+      <ContactSection />
 
       {/* Footer */}
       <footer className="w-full bg-blue-500 text-white text-center py-4">

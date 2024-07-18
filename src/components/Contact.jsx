@@ -11,7 +11,7 @@ const Contact = () => {
       <div className="container mx-auto flex flex-wrap py-6">
         {/* Image de contact */}
         <img
-          className="w-full mb-6"
+          className="w-full mb-6 rounded-lg"
           src={contactImage}
           alt="Image de contact"
         />
@@ -91,7 +91,7 @@ const Contact = () => {
               </div>
             </div>
             <p className="text-gray-700 mb-4">
-              Adresse :Akpakpa,Rue 1500, Cotonou <br />
+              Adresse : Akpakpa, Rue 1500, Cotonou <br />
               Téléphone : +229 52 46 03 03 <br />
               Email : hodecoth@gmail.com
             </p>
@@ -109,11 +109,9 @@ const Contact = () => {
         </div>
       </div>
 
-      <div>
-        <footer className="w-full bg-blue-500 text-white text-center py-4 w-full">
-          <Footer />
-        </footer>
-      </div>
+      <footer className="w-full bg-blue-500 text-white text-center py-4">
+        <Footer />
+      </footer>
     </div>
   );
 };

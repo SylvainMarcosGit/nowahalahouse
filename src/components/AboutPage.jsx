@@ -8,7 +8,6 @@ import chantier from "../assets/images/construction.png";
 import villa2 from "../assets/images/villa2.jpg";
 import villa1 from "../assets/images/villa1.jpg";
 import HeaderAbout from "./HeaderAbout";
-
 import Footer from "./Footer";
 
 const AboutPage = () => {
@@ -16,20 +15,19 @@ const AboutPage = () => {
     <div>
       <HeaderAbout />
       <Carousel />
+
       {/* Section Mission et Vision */}
       <section id="about" className="py-16">
-        <h2 className="text-4xl font-bold mb-8 mt-4 text-center">
-          A propos de nous
-        </h2>
-        <div className="container mx-auto flex flex-col md:flex-row items-center ">
+        <h2 className="text-4xl font-bold mb-8 mt-4 text-center">À propos de nous</h2>
+        <div className="container mx-auto flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-4 md:mb-0">
             <img
               src={logo}
               alt="Image Gauche"
-              className="w-medium h-auto rounded-lg"
+              className="w-full h-auto rounded-lg"
             />
           </div>
-          <div className="md:w-1/2 md:pl-8">
+          <div className="md:w-1/2 md:pl-8 p-4 md:p-8">
             <h2 className="text-3xl font-bold mb-4">Mission et Vision</h2>
             <div className="animate-fade-in">
               <p className="text-gray-700 mb-4">
@@ -62,47 +60,48 @@ const AboutPage = () => {
       {/* Section Autres Entreprises */}
       <section className="py-16 bg-gray-100">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">
-            Nos Images
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-8">Nos Images</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Cadre d'une autre entreprise */}
-            <div className="">
+            <div>
               <img
                 src={regle1}
                 alt="règle1"
-                className=""
+                className="w-full h-auto rounded-lg"
               />
             </div>
-            <div className="">
+            <div>
               <img
                 src={regle2}
                 alt="règle2"
-                className=""
+                className="w-full h-auto rounded-lg"
               />
-            </div><div className="">
+            </div>
+            <div>
               <img
                 src={regle3}
                 alt="règle3"
-                className=""
+                className="w-full h-auto rounded-lg"
               />
-            </div><div className="">
+            </div>
+            <div>
               <img
                 src={chantier}
                 alt="image de chantier"
-                className=""
+                className="w-full h-auto rounded-lg"
               />
-            </div><div className="">
+            </div>
+            <div>
               <img
                 src={villa1}
                 alt="image villa"
-                className=""
+                className="w-full h-auto rounded-lg"
               />
-            </div><div className="">
+            </div>
+            <div>
               <img
                 src={villa2}
                 alt="image villa"
-                className=""
+                className="w-full h-auto rounded-lg"
               />
             </div>
           </div>
