@@ -22,7 +22,10 @@ const Footer = () => {
         <div className="mt-4 sm:mt-0">
 
           <h2 className="text-lg md:text-2xl font-bold mb-2">Nos valeurs : E.D.I.F.I.E.R</h2>
-          <p className="mb-4 text-2xl ">Empathie, Diligence, Intégrité, Fidélité, Innovation, Excellence, Responsabilité</p> 
+          <p className="mb-4 text-2xl">
+  <span className="font-bold">E</span>mpathie, <span className="font-bold">D</span>iligence, <span className="font-bold">I</span>ntégrité, <span className="font-bold">F</span>idélité, <span className="font-bold">I</span>nnovation, <span className="font-bold">E</span>xcellence, <span className="font-bold">R</span>esponsabilité
+</p>
+
          <br /> <p className="mt-4 ">
           &copy; {new Date().getFullYear()} NO WAHALA HOUSE. Réalisé par Sylvain ZOSSOU.
         </p>
