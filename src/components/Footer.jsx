@@ -20,23 +20,12 @@ const Footer = () => {
 
         {/* Valeurs */}
         <div className="mt-4 sm:mt-0">
-          <h2 className="text-lg md:text-2xl font-bold mb-2">
-            Nos valeurs : E.D.I.F.I.E.R
-          </h2>
-          <p className="mb-4 text-2xl flex flex-wrap">
-            <span className="font-bold mr-1">E</span>mpathie,
-            <span className="font-bold mr-1">D</span>iligence,
-            <span className="font-bold mr-1">I</span>ntégrité,
-            <span className="font-bold mr-1">F</span>idélité,
-            <span className="font-bold mr-1">I</span>nnovation,
-            <span className="font-bold mr-1">E</span>xcellence,
-            <span className="font-bold mr-1">R</span>esponsabilité
-          </p>
-          <br />{" "}
-          <p className="mt-4 ">
-            &copy; {new Date().getFullYear()} NO WAHALA HOUSE. Réalisé par
-            Sylvain ZOSSOU.
-          </p>
+
+          <h2 className="text-lg md:text-2xl font-bold mb-2">Nos valeurs : E.D.I.F.I.E.R</h2>
+          <p className="mb-4 text-2xl ">Empathie, Diligence, Intégrité, Fidélité, Innovation, Excellence, Responsabilité</p> 
+         <br /> <p className="mt-4 ">
+          &copy; {new Date().getFullYear()} NO WAHALA HOUSE. Réalisé par Sylvain ZOSSOU.
+        </p>
         </div>
 
         {/* Réseaux sociaux */}
