@@ -1,8 +1,8 @@
 {
-    "routes": [
-      { "src": "/", "dest": "/" },
-      { "src": "/about", "dest": "/" },
-      { "src": "/contact", "dest": "/" }
-    ]
-  }
-  
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/about", "dest": "/" },
+    { "src": "/contact", "dest": "/" },
+    { "src": "/(.*)", "dest": "/" }
+  ]
+}

@@ -32,7 +32,7 @@ const Home = () => {
       {/* About Section */}
       <section id="about" className="w-full bg-gray-100">
         <div className="container mx-auto text-center">
-          <h2 className="mt-8 text-3xl font-bold mb-8">Qui sommes-nous ?</h2>
+          <h2 className="mt-8 text-3xl font-bold mb-8 ">Qui sommes-nous ?</h2>
           <p className="text-gray-700">
             Notre entreprise offre une gamme complète de services pour faciliter
             vos projets immobiliers. Obtenez rapidement des devis précis pour la
