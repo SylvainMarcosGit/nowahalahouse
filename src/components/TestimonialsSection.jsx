@@ -45,9 +45,9 @@ const TestimonialsSection = () => {
             className="bg-white rounded-lg shadow-md p-6"
           >
             <blockquote className="text-lg text-gray-700 mb-4">
-            Vous avez construit votre vie sur des fondations solides : foi, amour, et persévérance. Naturellement, nous vous faisons confiance, car vous nous guidez avec succès. Ancré dans des valeurs spirituelles, vous servez de modèle de dévouement et de sagesse. Que Dieu continue de vous bénir et de vous guider.
+            Vous avez construit votre vie sur des fondations solides : foi, amour, et persévérance. Naturellement, nous vous faisons confiance, car vous nous guidez avec succès. Ancré dans des valeurs spirituelles, vous servez de modèle de dévouement et de sagesse. Que Dieu continue de vous bénir et de vous guider.🙏🙏🙏
             </blockquote>
-            <cite className="block font-semibold">Sylvain ZOSSOU</cite>
+            <cite className="block font-semibold">MJI </cite>
           </motion.div>
         </div>
       </div>
