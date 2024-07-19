@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import contactImage from "../assets/images/about/contact1.jpg";
 import logo from "../assets/images/about/logo.jpg";
 import HeaderContact from "./HeaderContact";
@@ -6,45 +6,30 @@ import Footer from "./Footer";
 
 const Contact = () => {
   useEffect(() => {
-    // Défilement vers le haut de la page lorsque le composant est monté
     window.scrollTo(0, 0);
   }, []);
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const [responseMessage, setResponseMessage] = useState('');
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [id]: value,
-    }));
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      message: e.target.message.value,
+    };
+
     try {
       const response = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
-      if (response.ok) {
-        setResponseMessage('Votre message a été envoyé avec succès.');
-      } else {
-        setResponseMessage(`Erreur: ${result.message}`);
-      }
+      alert(result.message);
     } catch (error) {
-      setResponseMessage(`Erreur: ${error.message}`);
+      alert('Erreur lors de l\'envoi du message : ' + error.message);
     }
   };
 
@@ -71,8 +56,7 @@ const Contact = () => {
                 id="name"
                 type="text"
                 placeholder="Votre nom complet"
-                value={formData.name}
-                onChange={handleChange}
+                required
               />
             </div>
             <div className="mb-4">
@@ -84,8 +68,7 @@ const Contact = () => {
                 id="email"
                 type="email"
                 placeholder="Votre adresse email"
-                value={formData.email}
-                onChange={handleChange}
+                required
               />
             </div>
             <div className="mb-6">
@@ -96,8 +79,7 @@ const Contact = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
                 id="message"
                 placeholder="Votre message"
-                value={formData.message}
-                onChange={handleChange}
+                required
               ></textarea>
             </div>
             <div className="flex items-center justify-center">
@@ -109,7 +91,6 @@ const Contact = () => {
               </button>
             </div>
           </form>
-          {responseMessage && <p className="text-center text-red-500">{responseMessage}</p>}
         </div>
         <div className="w-full md:w-1/2 px-4">
           <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -144,7 +125,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
       <footer className="w-full bg-blue-500 text-white text-center py-4">
         <Footer />
       </footer>
