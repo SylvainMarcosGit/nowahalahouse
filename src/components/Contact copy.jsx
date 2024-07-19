@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import contactImage from "../assets/images/about/contact1.jpg";
 import logo from "../assets/images/about/logo.jpg";
 import HeaderContact from "./HeaderContact";
@@ -10,60 +10,28 @@ const Contact = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const [responseMessage, setResponseMessage] = useState('');
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [id]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/api/sendEmail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-
-      const result = await response.json();
-      if (response.ok) {
-        setResponseMessage('Votre message a été envoyé avec succès.');
-      } else {
-        setResponseMessage(`Erreur: ${result.message}`);
-      }
-    } catch (error) {
-      setResponseMessage(`Erreur: ${error.message}`);
-    }
-  };
-
   return (
     <div>
       <HeaderContact />
       <div className="container mx-auto flex flex-wrap py-6">
+        {/* Image de contact */}
         <img
           className="w-full mb-6 rounded-lg"
           src={contactImage}
           alt="Image de contact"
         />
+
+        {/* Formulaire de contact */}
         <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
           <h2 className="text-3xl font-semibold mb-4 text-center">
             Nous Contacter
           </h2>
-          <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+          <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="name"
+              >
                 Nom complet
               </label>
               <input
@@ -71,12 +39,13 @@ const Contact = () => {
                 id="name"
                 type="text"
                 placeholder="Votre nom complet"
-                value={formData.name}
-                onChange={handleChange}
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="email"
+              >
                 Adresse Email
               </label>
               <input
@@ -84,33 +53,33 @@ const Contact = () => {
                 id="email"
                 type="email"
                 placeholder="Votre adresse email"
-                value={formData.email}
-                onChange={handleChange}
               />
             </div>
             <div className="mb-6">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="message"
+              >
                 Message
               </label>
               <textarea
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
                 id="message"
                 placeholder="Votre message"
-                value={formData.message}
-                onChange={handleChange}
               ></textarea>
             </div>
             <div className="flex items-center justify-center">
               <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="submit"
+                type="button"
               >
                 Envoyer
               </button>
             </div>
           </form>
-          {responseMessage && <p className="text-center text-red-500">{responseMessage}</p>}
         </div>
+
+        {/* Carte d'information */}
         <div className="w-full md:w-1/2 px-4">
           <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <h2 className="text-3xl font-semibold mb-4 text-center">
