@@ -5,7 +5,7 @@ const TestimonialCarousel = () => {
   useEffect(() => {
     new Swiper('.swiper-container', {
       slidesPerView: 1,
-      spaceBetween: 0,
+      spaceBetween: 20, // Ajoutez de l'espace entre les slides
       loop: true,
       navigation: {
         nextEl: '.swiper-button-next',
@@ -14,9 +14,11 @@ const TestimonialCarousel = () => {
       breakpoints: {
         640: {
           slidesPerView: 1,
+          spaceBetween: 20,
         },
         768: {
           slidesPerView: 1,
+          spaceBetween: 20,
         },
       },
     });
