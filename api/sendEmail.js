@@ -4,6 +4,10 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, email, message } = req.body;
 
+    if (!name || !email || !message) {
+      return res.status(400).json({ message: 'Tous les champs sont requis' });
+    }
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -23,7 +27,8 @@ export default async function handler(req, res) {
       await transporter.sendMail(mailOptions);
       res.status(200).json({ message: 'Email envoyé avec succès' });
     } catch (error) {
-      res.status(500).json({ message: 'Erreur lors de l\'envoi de l\'email', error });
+      console.error('Erreur lors de l\'envoi de l\'email:', error);
+      res.status(500).json({ message: 'Erreur lors de l\'envoi de l\'email' });
     }
   } else {
     res.status(405).json({ message: 'Méthode non autorisée' });
