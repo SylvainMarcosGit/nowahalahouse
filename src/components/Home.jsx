@@ -1,13 +1,21 @@
-import React from "react";
-import Diasporama from "./Diasporama";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ContactSection from "./ContactSection";
-import TestimonialsSection from "./TestimonialsSection";
 import ServicesSection from "./ServicesSection";
+import Diasporama from "./Diasporama";
 import Header from "./Header";
 import Footer from "./Footer";
+import TestimonialCarousel from "./TestimonialCarousel";
 
 const Home = () => {
+
+  const [showServices, setShowServices] = useState(false);
+
+  const handleScrollToServices = () => {
+    setShowServices(true);
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <Header />
@@ -20,19 +28,17 @@ const Home = () => {
           Nous sommes ravis de vous accueillir.
         </p>
         <Link
-          to="#services"
-          className="mt-4 m-6 inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg transition duration-300"
-        >
-          Découvrez nos services
-        </Link>
+        to="#services"
+        onClick={handleScrollToServices}
+        className="mt-4 m-6 inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg transition duration-300"
+      >
+        Découvrez nos services
+      </Link>
       </div>
-      {/* Services Section */}
-      <ServicesSection />
-
-      {/* About Section */}
+      {showServices && <ServicesSection />}
       <section id="about" className="w-full bg-gray-100">
         <div className="container mx-auto text-center">
-          <h2 className="mt-8 text-3xl font-bold mb-8 ">Qui sommes-nous ?</h2>
+          <h2 className="mt-8 text-3xl font-bold mb-8">Qui sommes-nous ?</h2>
           <p className="text-gray-700">
             Notre entreprise offre une gamme complète de services pour faciliter
             vos projets immobiliers. Obtenez rapidement des devis précis pour la
@@ -52,13 +58,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <TestimonialsSection />
-
-      {/* Contact Section */}
+      <TestimonialCarousel />
       <ContactSection />
-
-      {/* Footer */}
       <footer className="w-full bg-blue-500 text-white text-center py-4">
         <Footer />
       </footer>

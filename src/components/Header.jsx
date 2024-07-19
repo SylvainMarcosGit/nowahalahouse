@@ -24,11 +24,7 @@ const Header = () => {
           {/* Menu on large screens */}
           <nav className="hidden md:flex">
             <ul className="flex space-x-4">
-              <li>
-                <a href="#services" className="hover:text-gray-300 text-lg md:text-2xl font-bold">
-                  Services
-                </a>
-              </li>
+              
               <li>
                 <a href="#about" className="hover:text-gray-300 text-lg md:text-2xl font-bold">
                   À Propos
@@ -83,11 +79,6 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-blue-500 text-white py-2 px-4 w-full text-center">
           <ul className="flex flex-col space-y-2">
-            <li>
-              <a href="#services" className="hover:text-gray-300 text-lg md:text-2xl font-bold">
-                Services
-              </a>
-            </li>
             <li>
               <a href="#about" className="hover:text-gray-300 text-lg md:text-2xl font-bold">
                 À Propos

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "./Carousel"; // Composant du carrousel
 import logo from "../assets/images/about/logo.jpg";
 import regle1 from "../assets/images/regle1.jpg";
@@ -10,12 +10,18 @@ import villa1 from "../assets/images/villa1.jpg";
 import HeaderAbout from "./HeaderAbout";
 import Footer from "./Footer";
 
+
+
 const AboutPage = () => {
+  useEffect(() => {
+    // Défilement vers le haut de la page lorsque le composant est monté
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <HeaderAbout />
       <Carousel />
-
       {/* Section Mission et Vision */}
       <section id="about" className="py-16">
         <h2 className="text-4xl font-bold mb-8 mt-4 text-center">À propos de nous</h2>
@@ -58,56 +64,56 @@ const AboutPage = () => {
       </section>
 
       {/* Section Autres Entreprises */}
+      
       <section className="py-16 bg-gray-100">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Nos Images</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <img
-                src={regle1}
-                alt="règle1"
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-            <div>
-              <img
-                src={regle2}
-                alt="règle2"
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-            <div>
-              <img
-                src={regle3}
-                alt="règle3"
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-            <div>
-              <img
-                src={chantier}
-                alt="image de chantier"
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-            <div>
-              <img
-                src={villa1}
-                alt="image villa"
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-            <div>
-              <img
-                src={villa2}
-                alt="image villa"
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-8">Nos Images</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="relative overflow-hidden group">
+            <img
+              src={regle1}
+              alt="règle1"
+              className="w-full h-auto rounded-lg transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+          </div>
+          <div className="relative overflow-hidden group">
+            <img
+              src={regle2}
+              alt="règle2"
+              className="w-full h-auto rounded-lg transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+          </div>
+          <div className="relative overflow-hidden group">
+            <img
+              src={regle3}
+              alt="règle3"
+              className="w-full h-auto rounded-lg transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+          </div>
+          <div className="relative overflow-hidden group">
+            <img
+              src={chantier}
+              alt="image de chantier"
+              className="w-full h-auto rounded-lg transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+          </div>
+          <div className="relative overflow-hidden group">
+            <img
+              src={villa1}
+              alt="image villa"
+              className="w-full h-auto rounded-lg transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+          </div>
+          <div className="relative overflow-hidden group">
+            <img
+              src={villa2}
+              alt="image villa"
+              className="w-full h-auto rounded-lg transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
           </div>
         </div>
-      </section>
-
+      </div>
+    </section>
       <footer className="w-full bg-blue-500 text-white text-center py-4">
         <Footer />
       </footer>

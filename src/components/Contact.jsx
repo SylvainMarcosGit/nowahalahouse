@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import contactImage from "../assets/images/about/contact1.jpg";
 import logo from "../assets/images/about/logo.jpg";
 import HeaderContact from "./HeaderContact";
 import Footer from "./Footer";
 
 const Contact = () => {
+  useEffect(() => {
+    // Défilement vers le haut de la page lorsque le composant est monté
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <HeaderContact />
