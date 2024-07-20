@@ -3,9 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo2 from "../assets/images/about/logo2.jpg";
 
 import {
-  faFacebook,
   faLinkedin,
-  faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -31,28 +29,12 @@ const Footer = () => {
         {/* Réseaux sociaux */}
         <div className="flex justify-center sm:justify-end mt-4 sm:mt-0">
           <a
-            href="https://www.facebook.com/entreprise"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white mr-2"
-          >
-            <FontAwesomeIcon icon={faFacebook} size="2x" />
-          </a>
-          <a
             href="https://fr.linkedin.com/posts/coth-hode-23b0a4241_nowahalahouse-activity-7214538425033465856-i-m9"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white mr-2"
           >
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
-          </a>
-          <a
-            href="https://www.twitter.com/entreprise"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white mr-2"
-          >
-            <FontAwesomeIcon icon={faTwitter} size="2x" />
           </a>
           <a
             href="https://www.youtube.com/channel/UCFIIt0SF5p-fLzmdHLkFqGQ"
