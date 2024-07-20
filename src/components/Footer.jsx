@@ -27,6 +27,7 @@ const Footer = () => {
         </div>
 
         {/* Réseaux sociaux */}
+
         <div className="flex justify-center sm:justify-end mt-4 sm:mt-0">
           <a
             href="https://fr.linkedin.com/posts/coth-hode-23b0a4241_nowahalahouse-activity-7214538425033465856-i-m9"
