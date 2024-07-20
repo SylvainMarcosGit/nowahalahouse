@@ -11,6 +11,8 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const form = e.target;
+    
     const formData = {
       name: e.target.name.value,
       email: e.target.email.value,
@@ -32,6 +34,10 @@ const Contact = () => {
 
       const result = await response.json();
       alert(result.message);
+
+      if (response.ok) {
+        form.reset();
+      }
     } catch (error) {
       alert('Erreur lors de l\'envoi du message : ' + error.message);
     }

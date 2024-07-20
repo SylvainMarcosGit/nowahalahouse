@@ -22,12 +22,12 @@ export default async function handler(req, res) {
         from: email,
         to: process.env.EMAIL_TO,
         subject: `Nouveau message de ${name}`,
-        text: message,
+        text: `Vous avez reçu un nouveau message de ${name} (${email}):\n\n${message}`,
       };
 
       const info = await transporter.sendMail(mailOptions);
       console.log('Email envoyé:', info); // Journal de succès
-      res.status(200).json({ message: 'Email envoyé avec succès' });
+      res.status(200).json({ message: 'Votre message a été envoyé avec succès' });
     } catch (error) {
       console.error('Erreur lors de l\'envoi de l\'email:', error); // Journal d'erreur
       res.status(500).json({ message: 'Erreur lors de l\'envoi de l\'email' });
