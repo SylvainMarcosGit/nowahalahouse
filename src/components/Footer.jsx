@@ -19,16 +19,13 @@ const Footer = () => {
         {/* Valeurs */}
         <div className="mt-4 sm:mt-0">
 
-          <h2 className="text-lg md:text-2xl font-bold mb-2">Nos valeurs : E.D.I.F.I.E.R</h2>
+          <h2 className="text-lg md:text-2xl font-bold ">Nos valeurs : E.D.I.F.I.E.R</h2>
           <p className="mb-4 text-2xl ">Empathie, Diligence, Intégrité, Fidélité, Innovation, Excellence, Responsabilité</p> 
-         <br /> <p className="mt-4 ">
-          &copy; {new Date().getFullYear()} NO WAHALA HOUSE. Réalisé par Sylvain ZOSSOU.
-        </p>
         </div>
 
         {/* Réseaux sociaux */}
 
-        <div className="flex justify-center sm:justify-end mt-4 sm:mt-0">
+        <div className="flex justify-center sm:justify-end sm:mt-0">
           <a
             href="https://fr.linkedin.com/posts/coth-hode-23b0a4241_nowahalahouse-activity-7214538425033465856-i-m9"
             target="_blank"
@@ -45,6 +42,11 @@ const Footer = () => {
           >
             <FontAwesomeIcon icon={faYoutube} size="2x" />
           </a>
+        </div>
+        <div className=" sm:mt-0">
+        <p className="mt-4 ">
+          &copy; {new Date().getFullYear()} NO WAHALA HOUSE. Réalisé par Sylvain ZOSSOU.
+        </p>
         </div>
       </div>
     </footer>
