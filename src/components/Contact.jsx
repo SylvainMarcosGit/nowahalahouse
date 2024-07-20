@@ -26,6 +26,10 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
 
+      if (!response.ok) {
+        throw new Error('Erreur lors de l\'envoi du message');
+      }
+
       const result = await response.json();
       alert(result.message);
     } catch (error) {
